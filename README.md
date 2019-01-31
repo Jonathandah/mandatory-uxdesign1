@@ -1,2 +1,2 @@
 # mandatory-uxdesign1
-mandatory-uxdesign1 - labb
+labb 1 - Ux-design

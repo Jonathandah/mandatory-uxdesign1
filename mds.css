@@ -1,0 +1,286 @@
+
+
+*{margin:0px;}
+body{
+    display: flex;
+    flex-direction: row;
+    background: rgba(0,0,0,.05);
+}
+form{
+    position: relative;
+    height: 500px;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+}
+/* ----------------------------------------------------------------------
+  Material Design input
+------------------------------------------------------------------------- */
+.mds-text-field{
+    z-index: 2;
+    position: relative;
+    top: 50px;
+    left:20px;
+    height: 56px;
+    width: 280px;
+    font-size: 16px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid rgba(0,0,0,.42);
+    margin-bottom: 16px;
+    background-color: transparent;
+}
+
+.mds-text-field__input{
+    z-index: 3;
+    position: absolute;
+    height: 40px;
+    width: 256px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    top:16px;
+    left: 12px;
+
+
+}
+
+.mds-text-field__label{
+    position: absolute;
+    top: 18px;  
+    /*tycker att material designs specs för lable-psotionen är svår att förstå,
+    vad betyder "C" för position?*/
+    left: 12px;
+    font-size: 16px;
+    color: rgba(0,0,0,.6);
+    transition: all 0.2s ease-out;
+}
+
+
+.mds-text-field__line{
+    z-index: 1;
+    position: absolute;
+    left: 139px;
+    height: 56px;
+    width: 0px;
+    border-bottom: 2px solid #6200EE;
+   
+    background-color: transparent;
+    transition: all 0.4s ease;
+}
+
+.mds-text-field__background{
+    height: 56px;
+    width: 280px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.mds-text-field__input:focus ~ .mds-text-field__line{ 
+    width: 2px;
+    transform: scalex(140);  
+}
+/*tycker även beskrivningen på labelns postition när den ska bli liten
+är lite dåligt förklarad på material design (eller är det bara jag som inte är 
+tillräckligt smart för att förstå spec:sen).
+*/
+.mds-text-field__input:focus ~ .mds-text-field__label{ 
+    color: #6200EE;
+    top:12px;
+    font-size: 12px;
+}
+.mds-text-field__background:hover{ 
+    background:rgba(0, 0, 0, 0.062);
+}
+
+    /*andvänder mig av två hovers pga ställer till 
+    det för utseende annars, tror det har och göra med alla lagers olika 
+    z-index, fick ej rätt på det utan två hovers*/
+
+.mds-text-field__input:hover ~ .mds-text-field__background{
+    background:rgba(0, 0, 0, 0.062);
+}
+
+.mds-text-field__input:focus ~ .mds-text-field__background{
+    background:rgba(0, 0, 0, 0.26);
+}
+
+/*disable-state*/
+input[type=text]:disabled ~ .mds-text-field__label{
+    opacity: 0.4;
+}
+input[type=text]:disabled ~ .mds-text-field__line{
+    opacity: 0.4;
+}
+input[type=text]:disabled{ 
+    display: none;
+}
+input[type=text]:disabled ~ .mds-text-field__background:hover{
+    display: none;
+}
+/* ----------------------------------------------------------------------
+  Material Design switch
+------------------------------------------------------------------------- */
+
+.mds-switch{
+    position: relative;
+    top: 100px;
+    left:100px;
+}
+.mds-switch__input{
+    opacity: 0;
+    position: relative;
+    width: 70px;
+    height: 30px;
+    top: 0px;
+    z-index: 2;
+}
+
+.mds-switch__slider{
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #ababab;
+    border-radius: 20px;
+    width: 36px;
+    height: 16px;
+    transition: all 0.2s ease;
+}
+
+.mds-switch__slider:after{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    top: -2px;
+    left: -2px;
+    transition: all 0.2s ease;
+}
+
+
+.mds-switch__input:checked + .mds-switch__slider{
+   background: #6200ee89;
+}
+
+.mds-switch__input:checked + .mds-switch__slider:after{
+    background: #6200EE;
+    left: 20px;
+ }
+
+ .mds-switch__input:hover{
+    cursor: pointer;
+}
+/*disable-state*/
+input[type=checkbox]:disabled ~ .mds-switch__slider{
+    opacity: 0.4;
+}
+
+input[type=checkbox]:disabled:hover{
+    cursor: default;
+}
+/* ----------------------------------------------------------------------
+  Material Design checkbox
+------------------------------------------------------------------------- */
+.material-icons.white600 { color: rgba(211, 157, 42, 0);}
+.material-icons{
+    position: relative;
+    top: 2px;
+    left: 2px;
+    transition: all 0.5s ease;
+}
+.mds-checkbox{
+    position: relative;
+    top: 200px;
+    left:100px;
+}
+.mds-checkbox__box{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    border: 2px solid  #0000008a;
+    top: 0px;
+    z-index: 1;
+}
+.mds-checkbox__input{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    z-index: 4;
+    opacity: 0;
+
+}
+
+.mds-checkbox__input:checked ~ .material-icons{
+    color: rgb(255, 255, 255);
+    z-index: 3;
+}
+.mds-checkbox__input:checked ~ .mds-checkbox__box{
+    background: #6200eeff;
+}
+
+.mds-checkbox__input:hover{
+    cursor: pointer;
+}
+/*disable-state*/
+input[type=checkbox]:disabled ~ .mds-checkbox__box{
+    opacity: 0.4;
+}
+
+input[type=checkbox]:disabled:hover{
+    cursor: default;
+}
+/* ----------------------------------------------------------------------
+  Material Design radio
+------------------------------------------------------------------------- */
+
+.mds-radio{
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    padding-right: 100px;
+    top: 300px;
+    left: 99px;
+  
+
+}
+.mds-radio__input{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 4;
+    opacity: 0;
+}
+
+.mds-radio__circle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid  #00000089;
+}
+
+.mds-radio__background{
+    position: relative;
+    left: 11px;
+    top: 11px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;     
+    transition: all 0.2s ease;
+}
+
+.mds-radio__input:checked ~ .mds-radio__circle{
+    border: 2px solid  #6200eeff;
+}
+
+.mds-radio__input:checked ~ .mds-radio__background{
+    background: #6200EE;
+    transform: scale(7, 7);
+}
+/*disable-state*/
+input[type=radio]:disabled ~ .mds-radio__circle{
+    opacity: 0.4;
+}

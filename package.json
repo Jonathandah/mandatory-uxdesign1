@@ -1,0 +1,23 @@
+{
+  "name": "mandatory-uxdesign1",
+  "version": "1.0.0",
+  "description": "labb 1 - Ux-design",
+  "main": "\u001b[B\u001b[A\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[B\u001b[B\u001b[A \u001b[B\u001b[B\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonathandah/mandatory-uxdesign1.git"
+  },
+  "author": "Jonathan Dahnberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonathandah/mandatory-uxdesign1/issues"
+  },
+  "homepage": "https://github.com/Jonathandah/mandatory-uxdesign1#readme",
+  "dependencies": {
+    "@material/textfield": "^0.43.0",
+    "material-design-icons": "^3.0.1"
+  }
+}
